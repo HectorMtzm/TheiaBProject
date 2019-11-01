@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,28 +7,84 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fadingEdge="none"
-    android:background="#ffc3c3c3">
+    android:background="@drawable/theiabbg">
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="154.5dp"
         android:id="@+id/TheiaBLogo"
-        android:src="@android:drawable/" />
+        android:src="@drawable/theiablogo"
+        android:layout_marginTop="20dp" />
+
+    <RelativeLayout
+        android:id="@+id/directions"
+        android:layout_width="217dp"
+        android:layout_height="287dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="74dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="74dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="13dp"
+        android:layout_gravity="center"
+        android:background="#00000000">
+
+        <TextView
+            android:id="@+id/log_in"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/sign_in"
+            android:textAppearance="@style/sign_in"
+            android:gravity="center_horizontal|center_vertical"/>
+
+        <View
+            android:id="@+id/arrow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/arrow"/>
+
+        <!-- ArrowDown -->
+        <View
+            android:id="@+id/arrowdown"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/arrowdown"/>
+
+        <!-- Sign up -->
+        <TextView
+            android:id="@+id/sign_up"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/sign_up"
+            android:textAppearance="@style/sign_up"
+            android:gravity="center_horizontal|center_vertical"/>
 
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:id="@+id/userIdTextBox" />
+    </RelativeLayout>
 
     <Button
-        android:text="Submit"
-        android:id="@+id/loginButton"
-        android:layout_marginRight="0.0dp"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:background="#ff3e50b4" />
-
+            android:text="Submit"
+            android:id="@+id/loginButton"
+            android:layout_marginRight="0.0dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="#ff3e50b4"/>
 </LinearLayout>

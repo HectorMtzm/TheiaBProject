@@ -9,8 +9,8 @@ namespace TheiaB.Droid
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        EditText userIdTextBox;
-        Button loginButton;
+        //EditText userIdTextBox;
+        //Button loginButton;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -20,16 +20,16 @@ namespace TheiaB.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            userIdTextBox = FindViewById<EditText>(Resource.Id.userIdTextBox);
-            loginButton = FindViewById<Button>(Resource.Id.loginButton);
+            //userIdTextBox = FindViewById<EditText>(Resource.Id.userIdTextBox);
+            //loginButton = FindViewById<Button>(Resource.Id.loginButton);
 
-            loginButton.Click += LoginButton_Click;
+            //loginButton.Click += LoginButton_Click;
 
         }
 
         private void LoginButton_Click(object sender, System.EventArgs e)
         {
-            Toast.MakeText(this, $"Hello {userIdTextBox.Text}", ToastLength.Long).Show();
+            //Toast.MakeText(this, $"Hello {userIdTextBox.Text}", ToastLength.Long).Show();
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
