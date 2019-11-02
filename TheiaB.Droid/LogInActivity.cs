@@ -1,0 +1,104 @@
+﻿using Android.App;
+using Android.OS;
+using Android.Runtime;
+using Android.Widget;
+using Android.Views;
+using System;
+using Android.Content;
+
+namespace TheiaB.Droid
+{
+    [Activity(Label = "@string/app_name", Theme = "@style/Sign_in_screen")]
+    public class LogInActivity : Activity, GestureDetector.IOnGestureListener
+    {
+        GestureDetector gestureDetector;
+        const int SWIPE_DISTANCE_THRESHOLD = 100;
+        const int SWIPE_VELOCITY_THRESHOLD = 100;
+
+        //Button loginButton;
+
+
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.log_in);
+
+            gestureDetector = new GestureDetector(this);
+
+            //loginButton = FindViewById<Button>(Resource.Id.loginButton);
+            //loginButton.Click += LoginButton_Click;
+
+        }
+
+        private void LoginButton_Click(object sender, System.EventArgs e)
+        {
+            //Toast.MakeText(this, $"Hello {userIdTextBox.Text}", ToastLength.Long).Show();
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        {
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+
+        //Swipe controls
+        public bool OnDown(MotionEvent e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
+        {
+            float distanceX = e2.GetX() - e1.GetX();
+            float distanceY = e2.GetY() - e1.GetY();
+            if (Math.Abs(distanceY) > Math.Abs(distanceX) && Math.Abs(distanceY) > SWIPE_DISTANCE_THRESHOLD && Math.Abs(velocityY) > SWIPE_VELOCITY_THRESHOLD)
+            {
+                if (distanceY > 0)
+                {
+                    Toast.MakeText(this, $"Total distance = {distanceY}", ToastLength.Long).Show();
+                    OnSwipeUp();
+
+
+                }
+                else
+                    OnSwipeDown();
+                return true;
+            }
+            return false;
+        }
+
+        private void OnSwipeUp()
+        {
+            StartActivity(new Intent(Application.Context, typeof(SignIn)));
+        }
+
+        private void OnSwipeDown()
+        {
+            StartActivity(new Intent(Application.Context, typeof(SignUp)));
+        }
+
+        public void OnLongPress(MotionEvent e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool OnScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void OnShowPress(MotionEvent e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool OnSingleTapUp(MotionEvent e)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+}
