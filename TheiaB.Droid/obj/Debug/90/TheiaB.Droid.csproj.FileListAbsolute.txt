@@ -300,3 +300,8 @@ C:\Users\hecto\source\repos\TheiaBProject\TheiaB.Droid\obj\Debug\90\stamp\_Gener
 C:\Users\hecto\source\repos\TheiaBProject\TheiaB.Droid\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\hecto\source\repos\TheiaBProject\TheiaB.Droid\obj\Debug\90\android\src\md55118afb754a471e5915ddcc7bb49e4f4\SignIn.java
 C:\Users\hecto\source\repos\TheiaBProject\TheiaB.Droid\obj\Debug\90\android\src\md55118afb754a471e5915ddcc7bb49e4f4\SignUp.java
+C:\Users\hecto\source\repos\TheiaBProject\TheiaB.Droid\obj\Debug\90\res\drawable\bemer.png
+C:\Users\hecto\source\repos\TheiaBProject\TheiaB.Droid\obj\Debug\90\res\drawable\blang.png
+C:\Users\hecto\source\repos\TheiaBProject\TheiaB.Droid\obj\Debug\90\res\drawable\bper.png
+C:\Users\hecto\source\repos\TheiaBProject\TheiaB.Droid\obj\Debug\90\res\drawable\bwalk.png
+C:\Users\hecto\source\repos\TheiaBProject\TheiaB.Droid\obj\Debug\90\android\src\md55118afb754a471e5915ddcc7bb49e4f4\SettMenuActivity.java

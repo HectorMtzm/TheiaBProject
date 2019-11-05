@@ -1,3 +1,6 @@
+TheiaB.Droid.SettMenuActivity, TheiaB.Droid;md55118afb754a471e5915ddcc7bb49e4f4.SettMenuActivity
+TheiaB.Droid.SettMenuActivity;md55118afb754a471e5915ddcc7bb49e4f4.SettMenuActivity
+theiab.droid.SettMenuActivity;md55118afb754a471e5915ddcc7bb49e4f4.SettMenuActivity
 TheiaB.Droid.SignIn, TheiaB.Droid;md55118afb754a471e5915ddcc7bb49e4f4.SignIn
 TheiaB.Droid.SignIn;md55118afb754a471e5915ddcc7bb49e4f4.SignIn
 theiab.droid.SignIn;md55118afb754a471e5915ddcc7bb49e4f4.SignIn

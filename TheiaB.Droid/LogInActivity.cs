@@ -11,11 +11,12 @@ namespace TheiaB.Droid
     [Activity(Label = "@string/app_name", Theme = "@style/Sign_in_screen")]
     public class LogInActivity : Activity, GestureDetector.IOnGestureListener
     {
-        GestureDetector gestureDetector;
-        const int SWIPE_DISTANCE_THRESHOLD = 100;
-        const int SWIPE_VELOCITY_THRESHOLD = 100;
+        private GestureDetector _gestureDetector;
+        const int SWIPE_DISTANCE_THRESHOLD = 10;
+        const int SWIPE_VELOCITY_THRESHOLD = 10;
 
         //Button loginButton;
+        //private EditText TextTest;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -25,8 +26,10 @@ namespace TheiaB.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.log_in);
 
-            gestureDetector = new GestureDetector(this);
+            _gestureDetector = new GestureDetector(this);
 
+            //TextTest.SetText("salsa".ToCharArray(),0,5);
+            //TextTest = FindViewById<EditText>(Resource.Id.TextTest);
             //loginButton = FindViewById<Button>(Resource.Id.loginButton);
             //loginButton.Click += LoginButton_Click;
 
@@ -57,6 +60,7 @@ namespace TheiaB.Droid
             float distanceY = e2.GetY() - e1.GetY();
             if (Math.Abs(distanceY) > Math.Abs(distanceX) && Math.Abs(distanceY) > SWIPE_DISTANCE_THRESHOLD && Math.Abs(velocityY) > SWIPE_VELOCITY_THRESHOLD)
             {
+                
                 if (distanceY > 0)
                 {
                     Toast.MakeText(this, $"Total distance = {distanceY}", ToastLength.Long).Show();
