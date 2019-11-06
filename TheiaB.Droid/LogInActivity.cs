@@ -5,11 +5,12 @@ using Android.Widget;
 using Android.Views;
 using System;
 using Android.Content;
+using Android.Support.V7.App;
 
 namespace TheiaB.Droid
 {
     [Activity(Label = "@string/app_name", Theme = "@style/Sign_in_screen")]
-    public class LogInActivity : Activity, GestureDetector.IOnGestureListener
+    public class LogInActivity : AppCompatActivity, GestureDetector.IOnGestureListener
     {
         private GestureDetector _gestureDetector;
         const int SWIPE_DISTANCE_THRESHOLD = 10;
@@ -54,6 +55,13 @@ namespace TheiaB.Droid
             throw new System.NotImplementedException();
         }
 
+        public override bool OnTouchEvent(MotionEvent e)
+        {
+            _gestureDetector.OnTouchEvent(e);
+            return true;
+        }
+
+
         public bool OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
         {
             float distanceX = e2.GetX() - e1.GetX();
@@ -62,14 +70,8 @@ namespace TheiaB.Droid
             {
                 
                 if (distanceY > 0)
-                {
-                    Toast.MakeText(this, $"Total distance = {distanceY}", ToastLength.Long).Show();
-                    OnSwipeUp();
+                    //Toast.MakeText(this, $"Total distance = {distanceY}", ToastLength.Long).Show();
 
-
-                }
-                else
-                    OnSwipeDown();
                 return true;
             }
             return false;

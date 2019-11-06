@@ -65,6 +65,8 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestureRecognizer.cs" />
+    <Compile Include="GestureRecognizerView.cs" />
     <Compile Include="SettMenuActivity.cs" />
     <Compile Include="SignIn.cs" />
     <Compile Include="MainActivity.cs" />
@@ -168,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\bwalk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

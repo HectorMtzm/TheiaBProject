@@ -40,9 +40,10 @@
 
             <TextView
                 android:id="@+id/sign_in"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="4"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:autoSizeTextType="uniform"
+                android:layout_weight="3"
                 android:text="@string/sign_in"
                 android:textAppearance="@style/sign_in"
                 android:gravity="center"
@@ -77,9 +78,10 @@
 
             <TextView
                 android:id="@+id/sign_up"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="4"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:autoSizeTextType="uniform"
+                android:layout_weight="3"
                 android:text="@string/sign_up"
                 android:textAppearance="@style/sign_up"
                 android:gravity="center"

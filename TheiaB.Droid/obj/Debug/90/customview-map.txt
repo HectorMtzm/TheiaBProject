@@ -129,7 +129,6 @@ android.widget.Space;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\
 attr;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\11\jl\res\values\values.xml
 attr;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\12\jl\res\values\values.xml
 attr;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\values\values.xml
-AutoCompleteTextView;obj\Debug\90\res\layout\camerafragmentlayout.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 bitmap;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\11\jl\res\drawable\notification_tile_bg.xml
@@ -142,15 +141,11 @@ bool;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\
 bool;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\values-port\values-port.xml
 Button;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout\abc_alert_dialog_button_bar_material.xml
 Button;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout-watch-v20\abc_alert_dialog_button_bar_material.xml
-Button;obj\Debug\90\res\layout\camerafragmentlayout.xml
-Button;obj\Debug\90\res\layout\log_in.xml
-Button;obj\Debug\90\res\layout\settings_menu.xml
 cache-path;C:\Users\hecto\source\repos\TheiaBProject\TheiaB.Droid\obj\Debug\90\lp\36\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 CheckBox;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout\abc_list_menu_item_checkbox.xml
 CheckedTextView;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout\select_dialog_multichoice_material.xml
 CheckedTextView;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout\select_dialog_singlechoice_material.xml
 Chronometer;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\11\jl\res\layout\notification_template_part_chronometer.xml
-clip-path;obj\Debug\90\res\drawable\arrow_down.xml
 color;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\11\jl\res\values\values.xml
 color;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\11\jl\res\values-v21\values-v21.xml
 color;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\drawable\abc_seekbar_track_material.xml
@@ -180,7 +175,6 @@ dimen;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res
 dimen;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\values-v18\values-v18.xml
 drawable;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\11\jl\res\values\values.xml
 eat-comment;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\values\values.xml
-EditText;obj\Debug\90\res\layout\log_in.xml
 enum;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\11\jl\res\values\values.xml
 enum;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\12\jl\res\values\values.xml
 enum;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\values\values.xml
@@ -197,9 +191,7 @@ FrameLayout;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\11\
 FrameLayout;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout\abc_activity_chooser_view.xml
 FrameLayout;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout\abc_alert_dialog_material.xml
 FrameLayout;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout\abc_popup_menu_header_item_layout.xml
-FrameLayout;obj\Debug\90\res\layout\camerafragmentlayout.xml
 group;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\drawable\abc_ic_arrow_drop_right_black_24dp.xml
-group;obj\Debug\90\res\drawable\arrow_down.xml
 ImageButton;obj\Debug\90\res\layout\settings_menu.xml
 ImageView;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\11\jl\res\layout\notification_action.xml
 ImageView;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\11\jl\res\layout\notification_action_tombstone.xml
@@ -306,7 +298,6 @@ LinearLayout;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26
 LinearLayout;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout\abc_search_view.xml
 LinearLayout;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout\abc_tooltip.xml
 LinearLayout;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout-watch-v20\abc_alert_dialog_title_material.xml
-LinearLayout;obj\Debug\90\res\layout\camerafragmentlayout.xml
 LinearLayout;obj\Debug\90\res\layout\log_in.xml
 LinearLayout;obj\Debug\90\res\layout\main_camera.xml
 LinearLayout;obj\Debug\90\res\layout\settings_menu.xml
@@ -333,8 +324,7 @@ RadioButton;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\
 RelativeLayout;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout\abc_list_menu_item_layout.xml
 RelativeLayout;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout\abc_popup_menu_item_layout.xml
 RelativeLayout;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout\abc_search_dropdown_item_icons_2line.xml
-RelativeLayout;obj\Debug\90\res\layout\camerafragmentlayout.xml
-RelativeLayout;obj\Debug\90\res\layout\log_in.xml
+RelativeLayout;obj\Debug\90\res\layout\settings_menu.xml
 resources;C:\Users\hecto\source\repos\TheiaBProject\TheiaB.Droid\obj\Debug\90\lp\0\jl\res\values\strings.xml
 resources;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\11\jl\res\values\values.xml
 resources;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\11\jl\res\values-af\values-af.xml
@@ -819,6 +809,7 @@ TextView;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\
 TextView;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\layout\support_simple_spinner_dropdown_item.xml
 TextView;obj\Debug\90\res\layout\log_in.xml
 TextView;obj\Debug\90\res\layout\settings_menu.xml
+TextView;obj\Debug\90\res\layout\sign_up.xml
 transition;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\drawable\abc_list_selector_background_transition_holo_dark.xml
 transition;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\drawable\abc_list_selector_background_transition_holo_light.xml
 translate;C:\Users\hecto\source\repos\TheiaBProject\TheiaB\obj\Debug\90\lp\26\jl\res\anim\abc_slide_in_bottom.xml

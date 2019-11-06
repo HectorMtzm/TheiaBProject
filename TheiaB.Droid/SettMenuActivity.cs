@@ -13,15 +13,27 @@ using Android.Widget;
 
 namespace TheiaB.Droid
 {
-    [Activity(Label = "SettMenuActivity")]
+    [Activity(Label = "Settings")]
     public class SettMenuActivity : AppCompatActivity
     {
+        ImageButton bemer;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Settings_menu);
 
             // Create your application here
+
+            bemer = FindViewById<ImageButton>(Resource.Id.bemer);
+
+            bemer.Click += Bemer_Click;
+        }
+
+        private void Bemer_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(LogInActivity));
+            StartActivity(intent);
+
         }
     }
 }
