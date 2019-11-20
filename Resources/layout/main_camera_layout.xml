@@ -1,0 +1,29 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/CameraLinearLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.AppCompatAutoCompleteTextView
+        android:id="@+id/searchACTextView"
+        android:elevation="4dp"
+        android:paddingLeft="5sp"
+        android:layout_margin="5dp"
+        android:textSize="30sp"
+        android:inputType="textAutoComplete|textCapWords"
+        android:hint="@string/abc_search_hint"
+        android:drawableLeft="@drawable/search_icon"
+        android:drawableStart="@drawable/search_icon"
+        android:drawablePadding="8dp"
+        android:imeOptions="actionDone"        
+        android:background="@drawable/searchbar_background"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <SurfaceView
+        android:id="@+id/cameraSurfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
