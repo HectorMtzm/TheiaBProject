@@ -35,12 +35,20 @@ namespace TheiaBProjectv2
         private void CreateAccountButton_Click(object sender, EventArgs e)
         {
             StartActivity(new Intent(Application.Context, typeof(SignUp)));
+            this.OverridePendingTransition(Resource.Animation.abc_slide_in_top, Resource.Animation.abc_slide_out_bottom);
+
         }
 
         private void signinButton_Click(object sender, EventArgs e)
         {
             this.Finish();
             StartActivity(new Intent(Application.Context, typeof(MainActivity)));
+        }
+
+        public override void OnBackPressed()
+        {
+            this.Finish();
+            this.OverridePendingTransition(Resource.Animation.abc_slide_in_top, Resource.Animation.abc_slide_out_bottom);
         }
     }
 }

@@ -10,11 +10,11 @@ using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
-using TheiaBProjectv2.Resources.Fragments;
+using TheiaBProjectv2.Fragments;
 
 namespace TheiaBProjectv2
 {
-    [Activity(Label = "Sign Up")]
+    [Activity(Label = "Sign Up", Theme = "@style/AppTheme.NoActionBar")]
     public class SignUp : AppCompatActivity
     {
         EditText firstname, lastname, username, password, passwordConfrimation;
@@ -44,18 +44,24 @@ namespace TheiaBProjectv2
             var trans = SupportFragmentManager.BeginTransaction();
             userCreatedFragment.Cancelable = false;
             userCreatedFragment.Show(trans, "Finish");
-            userCreatedFragment.finish += UserCreatedFragment_finish; ;
+            userCreatedFragment.finish += UserCreatedFragment_finish;
         }
 
         private void UserCreatedFragment_finish(object sender, EventArgs e)
         {
             this.Finish();
+            this.OverridePendingTransition(Resource.Animation.abc_slide_in_bottom, Resource.Animation.abc_slide_out_bottom);
         }
 
         private void CompleteButton_Click(object sender, EventArgs e)
         {
             userCreatedFragment();
+        }
 
+        public override void OnBackPressed()
+        {
+            this.Finish();
+            this.OverridePendingTransition(Resource.Animation.abc_slide_in_bottom, Resource.Animation.abc_slide_out_bottom);
         }
     }
 

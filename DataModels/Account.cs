@@ -10,14 +10,16 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace TheiaB.Droid.DataModels
+namespace TheiaBProjectv2
 {
     
     class Account
     {
-        string username { get; set; }
         string firstname { get; set; }
         string lastname { get; set; }
+        string email { get; set; }
+        string phoneNumber { get; set; }
+        string username { get; set; }
         string password { get; set; }
     }
 }

@@ -35,6 +35,7 @@ namespace TheiaBProjectv2
 
             Intent intent = new Intent(this, typeof(LogInActivity));
             StartActivity(intent);
+            this.Finish();
         }
     }
 }

@@ -1,1 +1,110 @@
-<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:background="#FFF" android:paddingHorizontal="20sp" android:paddingTop="30sp" android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"><ImageButton android:src="@drawable/bemer" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:scaleType="centerInside" android:background="#FFF" android:id="@+id/bemer" /><ImageButton android:src="@drawable/bwalk" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:scaleType="centerInside" android:background="#FFF" android:id="@+id/bwalk" /><ImageButton android:src="@drawable/bper" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:scaleType="centerInside" android:background="#FFF" android:id="@+id/bper" /><ImageButton android:src="@drawable/blang" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:scaleType="centerInside" android:background="#FFF" android:id="@+id/blang" /><LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1"><TextView android:text="Volume Override" android:textSize="30sp" android:textColor="#000" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/textView2" android:layout_marginTop="15dp" /><SeekBar android:layout_width="220sp" android:layout_height="wrap_content" android:background="#FFF" android:layout_marginRight="0.0dp" android:scaleX="1.5" android:scaleY="1.5" android:layout_gravity="left" android:layout_marginLeft="45.0dp" /></LinearLayout><RelativeLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1"><TextView android:text="Haptics" android:textSize="30sp" android:textColor="#000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:id="@+id/haptics" /><Switch android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerHorizontal="true" android:scaleX="1.5" android:scaleY="1.5" android:id="@+id/hapticsswitch" /></RelativeLayout><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" /></LinearLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#FFF"
+    android:paddingHorizontal="20sp"
+    android:paddingTop="30sp"
+    android:layout_height="match_parent">
+
+
+    <ImageButton
+        android:src="@drawable/bemer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:background="#FFF"
+        android:id="@+id/bemer"/>
+
+    <ImageButton
+        android:src="@drawable/bwalk"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:background="#FFF"
+        android:id="@+id/bwalk"/>
+
+    <ImageButton
+        android:src="@drawable/bper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:background="#FFF"
+        android:id="@+id/bper" />
+
+    <ImageButton
+        android:src="@drawable/blang"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:background="#FFF"
+        android:id="@+id/blang" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+
+        <TextView
+            android:text="Volume Override"
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_marginTop="15dp" />
+
+        <SeekBar
+            android:layout_width="220sp"
+            android:layout_height="wrap_content"
+            android:background="#FFF"
+            android:layout_marginRight="0.0dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:layout_gravity="left"
+            android:layout_marginLeft="45.0dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:text="Haptics"
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/haptics"/>
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:id="@+id/hapticsswitch"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+
+
+</LinearLayout>

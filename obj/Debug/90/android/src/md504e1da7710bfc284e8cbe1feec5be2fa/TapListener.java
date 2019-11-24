@@ -12,6 +12,7 @@ public class TapListener
 		__md_methods = 
 			"n_onDown:(Landroid/view/MotionEvent;)Z:GetOnDown_Landroid_view_MotionEvent_Handler\n" +
 			"n_onDoubleTap:(Landroid/view/MotionEvent;)Z:GetOnDoubleTap_Landroid_view_MotionEvent_Handler\n" +
+			"n_onLongPress:(Landroid/view/MotionEvent;)V:GetOnLongPress_Landroid_view_MotionEvent_Handler\n" +
 			"";
 		mono.android.Runtime.register ("TheiaBProjectv2.TapListener, TheiaBProjectv2", TapListener.class, __md_methods);
 	}
@@ -46,6 +47,14 @@ public class TapListener
 	}
 
 	private native boolean n_onDoubleTap (android.view.MotionEvent p0);
+
+
+	public void onLongPress (android.view.MotionEvent p0)
+	{
+		n_onLongPress (p0);
+	}
+
+	private native void n_onLongPress (android.view.MotionEvent p0);
 
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)

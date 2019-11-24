@@ -11,6 +11,15 @@
           "lib/MonoAndroid403/FastAndroidCamera.dll": {}
         }
       },
+      "Refractored.Controls.CircleImageView/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid10/Refractored.Controls.CircleImageView.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Refractored.Controls.CircleImageView.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -756,6 +765,19 @@
         "src/CameraExtensions.cs",
         "src/FastJavaByteArray.cs",
         "src/FastJavaByteArrayEnumerator.cs"
+      ]
+    },
+    "Refractored.Controls.CircleImageView/1.0.1": {
+      "sha512": "0859oKAXBdJIRtS3c6uFD550LtZQfm7xNn+auZTkrHhnJPKp0df6lB7Fdrwjbi+l3R4BbHJsj9qCSlw8e6GdSw==",
+      "type": "package",
+      "path": "refractored.controls.circleimageview/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Refractored.Controls.CircleImageView.dll",
+        "lib/MonoAndroid10/Refractored.Controls.CircleImageView.xml",
+        "refractored.controls.circleimageview.1.0.1.nupkg.sha512",
+        "refractored.controls.circleimageview.nuspec"
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
@@ -1570,6 +1592,7 @@
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
       "FastAndroidCamera >= 2.0.0",
+      "Refractored.Controls.CircleImageView >= 1.0.1",
       "Xamarin.Android.Support.Core.Utils >= 28.0.0.3",
       "Xamarin.Android.Support.CustomTabs >= 28.0.0.3",
       "Xamarin.Android.Support.Design >= 28.0.0.3",
@@ -1583,11 +1606,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hecto\\source\\repos\\TheiaBProjectv2\\TheiaBProjectv2.csproj",
+      "projectUniqueName": "C:\\Users\\hecto\\source\\repos\\TheiaBProject\\TheiaBProjectv2.csproj",
       "projectName": "TheiaBProjectv2",
-      "projectPath": "C:\\Users\\hecto\\source\\repos\\TheiaBProjectv2\\TheiaBProjectv2.csproj",
+      "projectPath": "C:\\Users\\hecto\\source\\repos\\TheiaBProject\\TheiaBProjectv2.csproj",
       "packagesPath": "C:\\Users\\hecto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hecto\\source\\repos\\TheiaBProjectv2\\obj\\",
+      "outputPath": "C:\\Users\\hecto\\source\\repos\\TheiaBProject\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1617,6 +1640,10 @@
           "FastAndroidCamera": {
             "target": "Package",
             "version": "[2.0.0, )"
+          },
+          "Refractored.Controls.CircleImageView": {
+            "target": "Package",
+            "version": "[1.0.1, )"
           },
           "Xamarin.Android.Support.Core.Utils": {
             "target": "Package",

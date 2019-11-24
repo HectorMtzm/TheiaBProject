@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hecto\\source\\repos\\TheiaBProjectv2\\TheiaBProjectv2.csproj": {}
+    "C:\\Users\\hecto\\source\\repos\\TheiaBProject\\TheiaBProjectv2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hecto\\source\\repos\\TheiaBProjectv2\\TheiaBProjectv2.csproj": {
+    "C:\\Users\\hecto\\source\\repos\\TheiaBProject\\TheiaBProjectv2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hecto\\source\\repos\\TheiaBProjectv2\\TheiaBProjectv2.csproj",
+        "projectUniqueName": "C:\\Users\\hecto\\source\\repos\\TheiaBProject\\TheiaBProjectv2.csproj",
         "projectName": "TheiaBProjectv2",
-        "projectPath": "C:\\Users\\hecto\\source\\repos\\TheiaBProjectv2\\TheiaBProjectv2.csproj",
+        "projectPath": "C:\\Users\\hecto\\source\\repos\\TheiaBProject\\TheiaBProjectv2.csproj",
         "packagesPath": "C:\\Users\\hecto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hecto\\source\\repos\\TheiaBProjectv2\\obj\\",
+        "outputPath": "C:\\Users\\hecto\\source\\repos\\TheiaBProject\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -41,6 +41,10 @@
             "FastAndroidCamera": {
               "target": "Package",
               "version": "[2.0.0, )"
+            },
+            "Refractored.Controls.CircleImageView": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             },
             "Xamarin.Android.Support.Core.Utils": {
               "target": "Package",

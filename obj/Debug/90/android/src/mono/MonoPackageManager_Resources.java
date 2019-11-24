@@ -4,6 +4,7 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "TheiaBProjectv2.dll" comes first in this list. */
 		"TheiaBProjectv2.dll",
 		"FastAndroidCamera.dll",
+		"Refractored.Controls.CircleImageView.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

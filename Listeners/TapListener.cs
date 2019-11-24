@@ -16,7 +16,7 @@ namespace TheiaBProjectv2
         }
 
 
-    public override bool OnDown(MotionEvent e)
+        public override bool OnDown(MotionEvent e)
         {
             return true;
         }
@@ -24,6 +24,17 @@ namespace TheiaBProjectv2
         public override bool OnDoubleTap(MotionEvent e)
         {
             return true;
+        }
+        public override void OnLongPress(MotionEvent e)
+        {
+            MakePhoneCall("2144917399");
+        }
+
+        public void MakePhoneCall(string number)
+        {
+            var intent = new Intent(Intent.ActionCall, Android.Net.Uri.Parse("tel:" + Uri.EscapeDataString(number)));
+            intent.AddFlags(ActivityFlags.NewTask);
+            Android.App.Application.Context.StartActivity(intent);
         }
     }
 }

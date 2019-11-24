@@ -29,11 +29,11 @@ public class GestureListener
 			mono.android.TypeManager.Activate ("TheiaBProjectv2.Listeners.GestureListener, TheiaBProjectv2", "", this, new java.lang.Object[] {  });
 	}
 
-	public GestureListener (android.content.Context p0)
+	public GestureListener (android.content.Context p0, android.app.Activity p1)
 	{
 		super ();
 		if (getClass () == GestureListener.class)
-			mono.android.TypeManager.Activate ("TheiaBProjectv2.Listeners.GestureListener, TheiaBProjectv2", "Android.Content.Context, Mono.Android", this, new java.lang.Object[] { p0 });
+			mono.android.TypeManager.Activate ("TheiaBProjectv2.Listeners.GestureListener, TheiaBProjectv2", "Android.Content.Context, Mono.Android:Android.App.Activity, Mono.Android", this, new java.lang.Object[] { p0, p1 });
 	}
 
 
