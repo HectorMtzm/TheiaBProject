@@ -21,7 +21,6 @@ namespace TheiaBProjectv2
     public class MainActivity : AppCompatActivity, TextureView.ISurfaceTextureListener
     {
         private AutoCompleteTextView searchACTextView;
-        private GestureDetector.IOnDoubleTapListener _tapDetector;
         private GestureDetector gestureDetector;
         private bool backPressedOnce = false;
         private NavigationView navview;
@@ -33,7 +32,7 @@ namespace TheiaBProjectv2
         //voice to text variables
         private readonly int VOICE = 10;
         private bool isRecording = false;
-        ImageButton micButton;
+        public ImageButton micButton;
 
         //Drawer
         Android.Support.V4.Widget.DrawerLayout drawerLayout;
@@ -66,61 +65,54 @@ namespace TheiaBProjectv2
             //camera preview. Obsolete btw.
             cameraSurfaceView.SurfaceTextureListener = this;
 
-            //Autocomplete editbar
+            //Autocomplete edittext
             var adapter = new ArrayAdapter<String>(this, Resource.Layout.list_item, Rooms.rooms);
             searchACTextView.Adapter = adapter;
 
             //Set up listener
-            gestureDetector = new GestureDetector(this, new CameraGestureListener(this, this));
+            //gestureDetector = new GestureDetector(this, new CameraGestureListener(this, this));
 
             //set audio files
             tryAgainAudio = MediaPlayer.Create(this, Resource.Raw.pleaseTryAgain);
             strartingNavAudio = MediaPlayer.Create(this, Resource.Raw.startingNavigation);
 
             //Double tap detector
-            GestureDetector _tapDetector = new GestureDetector(this, new TapListener(this));
-            _tapDetector.DoubleTap += async (object sender, GestureDetector.DoubleTapEventArgs e) =>
-            {
-                var request = new GeolocationRequest(GeolocationAccuracy.Best);
-                var location = await Geolocation.GetLocationAsync(request);
-                string message = "I got lost around here: http://www.google.com/maps/place/" + location.Latitude + "," + location.Longitude ;
-                SmsManager.Default.SendTextMessage("2144917399", null, message, null, null);
-
-                //Play audio for "Location sent"
-            };
+            GestureDetector gestureDetector = new GestureDetector(this, new CameraGestureListener(this));
             
             //tap detector event handler
             cameraSurfaceView.Touch += (object sender, View.TouchEventArgs e) => {
-                _tapDetector.OnTouchEvent(e.Event);
+                gestureDetector.OnTouchEvent(e.Event);
             };
 
             //Mic voice to text
             string rec = Android.Content.PM.PackageManager.FeatureMicrophone;
 
-            micButton.Click += delegate
+            micButton.Click += MicButton_Click;
+        }
+
+        private void MicButton_Click(object sender, EventArgs e)
+        {
+            // change the text on the button
+            isRecording = !isRecording;
+            if (isRecording)
             {
-                // change the text on the button
-                isRecording = !isRecording;
-                if (isRecording)
-                {
-                    //create the intent and start the activity
-                    var voiceIntent = new Intent(RecognizerIntent.ActionRecognizeSpeech);
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraLanguageModel, RecognizerIntent.LanguageModelFreeForm);
+                //create the intent and start the activity
+                var voiceIntent = new Intent(RecognizerIntent.ActionRecognizeSpeech);
+                voiceIntent.PutExtra(RecognizerIntent.ExtraLanguageModel, RecognizerIntent.LanguageModelFreeForm);
 
-                    //message on the modal dialog
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraPrompt, "Speak now");
+                //message on the modal dialog
+                voiceIntent.PutExtra(RecognizerIntent.ExtraPrompt, "Speak now");
 
-                    //if there is more then 1.5s of silence, consider the speech over
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputCompleteSilenceLengthMillis, 1500);
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputPossiblyCompleteSilenceLengthMillis, 1500);
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputMinimumLengthMillis, 15000);
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraMaxResults, 1);
-                                     
-                    //Languages to be recognized
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraLanguage, Java.Util.Locale.Default);
-                    StartActivityForResult(voiceIntent, VOICE);
-                }
-            };
+                //if there is more then 1.5s of silence, consider the speech over
+                voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputCompleteSilenceLengthMillis, 1500);
+                voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputPossiblyCompleteSilenceLengthMillis, 1500);
+                voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputMinimumLengthMillis, 15000);
+                voiceIntent.PutExtra(RecognizerIntent.ExtraMaxResults, 1);
+
+                //Languages to be recognized
+                voiceIntent.PutExtra(RecognizerIntent.ExtraLanguage, Java.Util.Locale.Default);
+                StartActivityForResult(voiceIntent, VOICE);
+            }
         }
 
         //Camera stuff

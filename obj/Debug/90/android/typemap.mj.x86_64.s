@@ -1,4 +1,4 @@
-	/* Data SHA1: 05f40a405c02c45f92c977c02c32b12565190f1e */
+	/* Data SHA1: 09e2cdb5c773d9598ae6e32e4280eca930b3a08c */
 	.file	"typemap.mj.inc"
 
 	/* Mapping header */
@@ -10,7 +10,7 @@ mj_typemap_header:
 	/* version */
 	.long	1
 	/* entry-count */
-	.long	1177
+	.long	1160
 	/* entry-length */
 	.long	262
 	/* value-offset */
@@ -21,5 +21,5 @@ mj_typemap_header:
 	.type	mj_typemap, @object
 	.global	mj_typemap
 mj_typemap:
-	.size	mj_typemap, 308375
+	.size	mj_typemap, 303921
 	.include	"typemap.mj.inc"

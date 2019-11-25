@@ -337,7 +337,6 @@ C:\Users\hecto\source\repos\TheiaBProject\obj\Debug\90\android\src\md5dcb6eccdc8
 C:\Users\hecto\source\repos\TheiaBProject\obj\Debug\90\android\src\md5dcb6eccdc824e0677ffae8ccdde42930\KeepAliveService.java
 C:\Users\hecto\source\repos\TheiaBProject\obj\Debug\90\android\src\md5e4034439844560ebb602b4af3b7e34c3\EmergencyContactSActivity.java
 C:\Users\hecto\source\repos\TheiaBProject\obj\Debug\90\android\src\md54908d67eb9afef4acc92753cc61471e9\CircleImageView.java
-C:\Users\hecto\source\repos\TheiaBProject\obj\Debug\90\android\src\md5d2820a548b96bb2d7dbf719eca2c1fd7\GestureListener.java
 C:\Users\hecto\source\repos\TheiaBProject\obj\Debug\90\android\bin\packaged_resources
 C:\Users\hecto\source\repos\TheiaBProject\obj\Debug\90\android\src\com\companyname\theiabprojectv2\R.java
 C:\Users\hecto\source\repos\TheiaBProject\obj\Debug\90\android\bin\classes.dex
@@ -354,3 +353,4 @@ C:\Users\hecto\source\repos\TheiaBProject\obj\Debug\90\stamp\_GeneratePackageMan
 C:\Users\hecto\source\repos\TheiaBProject\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\hecto\source\repos\TheiaBProject\obj\Debug\90\TheiaBProjectv2.csprojAssemblyReference.cache
 C:\Users\hecto\source\repos\TheiaBProject\obj\Debug\90\android\src\md5d2820a548b96bb2d7dbf719eca2c1fd7\LoginGestureListener.java
+C:\Users\hecto\source\repos\TheiaBProject\obj\Debug\90\android\src\md5d2820a548b96bb2d7dbf719eca2c1fd7\CameraGestureListener.java

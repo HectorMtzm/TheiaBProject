@@ -66,14 +66,11 @@
     <Compile Include="Activities\SignIn.cs" />
     <Compile Include="Activities\SignUp.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
-    <Compile Include="AutoFitTextureView.cs" />
     <Compile Include="DataModels\Account.cs" />
-    <Compile Include="Fragments\CameraFragment.cs" />
     <Compile Include="Helpers\Rooms.cs" />
     <Compile Include="Listeners\CameraGestureListener.cs" />
     <Compile Include="Listeners\LoginGestureListener.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Listeners\TapListener.cs" />
     <Compile Include="Fragments\UserCreatedFragment.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

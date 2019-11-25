@@ -7,63 +7,71 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Telephony;
 using Android.Views;
 using Android.Widget;
+using Xamarin.Essentials;
 
 namespace TheiaBProjectv2.Listeners
 {
-    class CameraGestureListener : GestureDetector.IOnDoubleTapListener, GestureDetector.IOnGestureListener
+    class CameraGestureListener : GestureDetector.SimpleOnGestureListener
     {
-        public IntPtr Handle => throw new NotImplementedException();
+        private Activity activity;
 
-        public void Dispose()
+        public CameraGestureListener(Activity activity)
         {
-            throw new NotImplementedException();
+            this.activity = activity;
         }
 
-        public bool OnDoubleTap(MotionEvent e)
+        public override bool OnDown(MotionEvent e)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
-        public bool OnDoubleTapEvent(MotionEvent e)
+        public override bool OnDoubleTap(MotionEvent e)
         {
-            throw new NotImplementedException();
+            activity.FindViewById<ImageButton>(Resource.Id.micButton).PerformClick();
+            return true;
         }
 
-        public bool OnDown(MotionEvent e)
+        public override bool OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
         {
-            throw new NotImplementedException();
+            bool usedThisFling = false;
+            float distanceY = e2.GetY() - e1.GetY();
+            //float distanceX = e2.GetX() - e1.GetX();
+
+            // Is it horizontal?
+            if (Math.Abs(velocityY) >= 2.0 * Math.Abs(velocityX))
+            {
+                if (distanceY > 300.0)
+                    sendLocation();
+                usedThisFling = true;
+            }
+            return usedThisFling;
         }
 
-        public bool OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
+        public override void OnLongPress(MotionEvent e)
         {
-            throw new NotImplementedException();
+            MakePhoneCall("2144917399");
         }
 
-        public void OnLongPress(MotionEvent e)
+
+
+        private async System.Threading.Tasks.Task sendLocation()
         {
-            throw new NotImplementedException();
+            var request = new GeolocationRequest(GeolocationAccuracy.Best);
+            var location = await Geolocation.GetLocationAsync(request);
+            string message = "I got lost around here: http://www.google.com/maps/place/" + location.Latitude + "," + location.Longitude;
+            SmsManager.Default.SendTextMessage("2144917399", null, message, null, null);
+
+            //Play audio for "Location sent"}
         }
 
-        public bool OnScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY)
+        public void MakePhoneCall(string number)
         {
-            throw new NotImplementedException();
-        }
-
-        public void OnShowPress(MotionEvent e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool OnSingleTapConfirmed(MotionEvent e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool OnSingleTapUp(MotionEvent e)
-        {
-            throw new NotImplementedException();
+            var intent = new Intent(Intent.ActionCall, Android.Net.Uri.Parse("tel:" + Uri.EscapeDataString(number)));
+            intent.AddFlags(ActivityFlags.NewTask);
+            Android.App.Application.Context.StartActivity(intent);
         }
     }
 }
