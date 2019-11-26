@@ -11,7 +11,7 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 
-namespace TheiaBProjectv2
+namespace TheiaBProjectv2.Activities
 {
     [Activity(Label = "Settings")]
     public class SettMenuActivity : AppCompatActivity
@@ -31,8 +31,8 @@ namespace TheiaBProjectv2
 
         private void Bemer_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(SignUp));
-            StartActivity(intent);
+            //Intent intent = new Intent(this, typeof(AccelerometerTest));
+            //StartActivity(intent);
 
         }
     }

@@ -1,5 +1,7 @@
 adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
+alpha;obj\Debug\90\res\transition\fade_in.xml
+alpha;obj\Debug\90\res\transition\fade_out.xml
 android.support.design.widget.NavigationView;obj\Debug\90\res\layout\main_camera_layout.xml
 android.support.design.widget.TextInputLayout;obj\Debug\90\res\layout\sign_in_layout.xml
 android.support.design.widget.TextInputLayout;obj\Debug\90\res\layout\sign_up_layout.xml
@@ -52,6 +54,7 @@ layer-list;obj\Debug\90\res\drawable\roundbutton.xml
 layer-list;obj\Debug\90\res\drawable\roundbutton_white.xml
 layer-list;obj\Debug\90\res\drawable\searchbar_background.xml
 layer-list;obj\Debug\90\res\drawable\splash_screen.xml
+LinearLayout;obj\Debug\90\res\layout\accelerometertest.xml
 LinearLayout;obj\Debug\90\res\layout\contactlistitem.xml
 LinearLayout;obj\Debug\90\res\layout\emergency_contacts.xml
 LinearLayout;obj\Debug\90\res\layout\login_layout.xml
@@ -89,6 +92,8 @@ ScrollView;obj\Debug\90\res\layout\sign_up_layout.xml
 SeekBar;obj\Debug\90\res\layout\settings_menu_layout.xml
 selector;obj\Debug\90\res\drawable\roundbutton.xml
 selector;obj\Debug\90\res\drawable\roundbutton_white.xml
+set;obj\Debug\90\res\transition\fade_in.xml
+set;obj\Debug\90\res\transition\fade_out.xml
 shape;obj\Debug\90\res\drawable\roundbutton.xml
 shape;obj\Debug\90\res\drawable\roundbutton_white.xml
 shape;obj\Debug\90\res\drawable\searchbar_background.xml
@@ -100,6 +105,7 @@ style;obj\Debug\90\res\values\styles.xml
 SurfaceView;obj\Debug\90\res\layout\camera_main_layoutv2.xml
 Switch;obj\Debug\90\res\layout\settings_menu_layout.xml
 TextureView;obj\Debug\90\res\layout\include_main.xml
+TextView;obj\Debug\90\res\layout\accelerometertest.xml
 TextView;obj\Debug\90\res\layout\contactlistitem.xml
 TextView;obj\Debug\90\res\layout\headerofthenav.xml
 TextView;obj\Debug\90\res\layout\list_item.xml

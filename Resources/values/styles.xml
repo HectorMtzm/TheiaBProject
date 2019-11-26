@@ -31,6 +31,11 @@
   <style name="AppTheme.NoActionBar" parent="AppTheme">
     <item name="windowActionBar">false</item>
     <item name="windowNoTitle">true</item>
+    <item name="android:keepScreenOn">true</item>
+  </style>
+
+  <style name="AppTheme.Drawer">
+    <item name="android:textSize">25sp</item>
   </style>
 
 </resources>

@@ -1,13 +1,13 @@
-﻿using Android.App;
+﻿using System;
+
+using Android.App;
 using Android.OS;
 using Android.Views;
 using TheiaBProjectv2.Listeners;
-using Android.Widget;
 using Android.Content.PM;
 using Android.Support.V4.Content;
 using Android;
 using Android.Support.V4.App;
-using System;
 
 namespace TheiaBProjectv2
 {

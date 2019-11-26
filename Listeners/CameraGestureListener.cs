@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+using System.Threading;
 using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
+using Android.Media;
 using Android.Telephony;
 using Android.Views;
 using Android.Widget;
@@ -17,10 +13,17 @@ namespace TheiaBProjectv2.Listeners
     class CameraGestureListener : GestureDetector.SimpleOnGestureListener
     {
         private Activity activity;
+        private Context context;
 
-        public CameraGestureListener(Activity activity)
+        MediaPlayer locationSent, emergencyCall; 
+        //MainActivity
+
+        public CameraGestureListener(Activity activity, Context context)
         {
             this.activity = activity;
+            this.context = context;
+            locationSent = MediaPlayer.Create(context, Resource.Raw.locationSent);
+            emergencyCall = MediaPlayer.Create(context, Resource.Raw.callingEmergencyContact);
         }
 
         public override bool OnDown(MotionEvent e)
@@ -40,7 +43,7 @@ namespace TheiaBProjectv2.Listeners
             float distanceY = e2.GetY() - e1.GetY();
             //float distanceX = e2.GetX() - e1.GetX();
 
-            // Is it horizontal?
+            // Is it Vertical?
             if (Math.Abs(velocityY) >= 2.0 * Math.Abs(velocityX))
             {
                 if (distanceY > 300.0)
@@ -52,23 +55,26 @@ namespace TheiaBProjectv2.Listeners
 
         public override void OnLongPress(MotionEvent e)
         {
-            MakePhoneCall("2144917399");
+            MakePhoneCall("4693439123");
         }
 
 
 
-        private async System.Threading.Tasks.Task sendLocation()
+        public async System.Threading.Tasks.Task sendLocation()
         {
             var request = new GeolocationRequest(GeolocationAccuracy.Best);
             var location = await Geolocation.GetLocationAsync(request);
             string message = "I got lost around here: http://www.google.com/maps/place/" + location.Latitude + "," + location.Longitude;
-            SmsManager.Default.SendTextMessage("2144917399", null, message, null, null);
+            SmsManager.Default.SendTextMessage("4693439123", null, message, null, null);
+            locationSent.Start();
 
             //Play audio for "Location sent"}
         }
 
         public void MakePhoneCall(string number)
         {
+            emergencyCall.Start();
+            Thread.Sleep(1500);
             var intent = new Intent(Intent.ActionCall, Android.Net.Uri.Parse("tel:" + Uri.EscapeDataString(number)));
             intent.AddFlags(ActivityFlags.NewTask);
             Android.App.Application.Context.StartActivity(intent);

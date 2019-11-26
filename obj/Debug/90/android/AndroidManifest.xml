@@ -16,7 +16,6 @@
   <uses-permission android:name="android.permission.SEND_SMS" />
   <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme" android:name="android.app.Application" android:debuggable="true">
     <activity android:label="@string/app_name" android:launchMode="singleInstance" android:theme="@style/Sign_in_screen" android:name="md504e1da7710bfc284e8cbe1feec5be2fa.LogInActivity" />
-    <activity android:label="Settings" android:name="md504e1da7710bfc284e8cbe1feec5be2fa.SettMenuActivity" />
     <activity android:label="" android:noHistory="true" android:theme="@style/AppTheme.NoActionBar" android:name="md504e1da7710bfc284e8cbe1feec5be2fa.SignIn" />
     <activity android:label="Sign Up" android:theme="@style/AppTheme.NoActionBar" android:name="md504e1da7710bfc284e8cbe1feec5be2fa.SignUp" />
     <activity android:noHistory="true" android:theme="@style/splash_screen" android:name="md504e1da7710bfc284e8cbe1feec5be2fa.SplashActivity">
@@ -25,7 +24,8 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="Activity1" android:theme="@style/AppTheme.NoActionBar" android:name="md504e1da7710bfc284e8cbe1feec5be2fa.MainActivity" />
+    <activity android:label="Activity1" android:launchMode="singleInstance" android:theme="@style/AppTheme.NoActionBar" android:name="md504e1da7710bfc284e8cbe1feec5be2fa.MainActivity" />
+    <activity android:label="Settings" android:name="md5fda3400dcda2600b053c799fd8f68796.SettMenuActivity" />
     <activity android:label="Emergency Contact Selection" android:name="md5e4034439844560ebb602b4af3b7e34c3.EmergencyContactSActivity" />
     <service android:name="md5dcb6eccdc824e0677ffae8ccdde42930.KeepAliveService" />
     <receiver android:enabled="true" android:exported="false" android:label="Essentials Battery Broadcast Receiver" android:name="md5d630c3d3bfb5f5558520331566132d97.BatteryBroadcastReceiver" />

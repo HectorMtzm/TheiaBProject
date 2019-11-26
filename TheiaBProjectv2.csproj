@@ -204,11 +204,6 @@
     <AndroidResource Include="Resources\layout\list_item.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\camera_main_layoutV2.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_camera.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -216,7 +211,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\mic.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\Transition\fade_in.xml" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\menu1.xml" />
   </ItemGroup>
@@ -256,6 +253,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\raw\startingNavigation.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Transition\fade_out.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\locationSent.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\callingEmergencyContact.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\fallDetected.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

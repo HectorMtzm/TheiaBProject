@@ -26,11 +26,11 @@ public class CameraGestureListener
 			mono.android.TypeManager.Activate ("TheiaBProjectv2.Listeners.CameraGestureListener, TheiaBProjectv2", "", this, new java.lang.Object[] {  });
 	}
 
-	public CameraGestureListener (android.app.Activity p0)
+	public CameraGestureListener (android.app.Activity p0, android.content.Context p1)
 	{
 		super ();
 		if (getClass () == CameraGestureListener.class)
-			mono.android.TypeManager.Activate ("TheiaBProjectv2.Listeners.CameraGestureListener, TheiaBProjectv2", "Android.App.Activity, Mono.Android", this, new java.lang.Object[] { p0 });
+			mono.android.TypeManager.Activate ("TheiaBProjectv2.Listeners.CameraGestureListener, TheiaBProjectv2", "Android.App.Activity, Mono.Android:Android.Content.Context, Mono.Android", this, new java.lang.Object[] { p0, p1 });
 	}
 
 

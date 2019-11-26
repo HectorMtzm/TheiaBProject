@@ -13,10 +13,13 @@
     <item android:id="@+id/navProfile"
           android:title="Profile"
           android:icon="@drawable/profile_outline"/>
-
+    
+    <item android:id="@+id/navSettings"
+          android:title="Settings"
+          android:icon="@drawable/settings_outline"/>
   </group>
   
-  <group android:checkableBehavior="single"
+  <group android:checkableBehavior="none"
          android:id="@+id/group2">
     <item android:id="@+id/navCall"
           android:title="Emergency Call"
@@ -27,9 +30,10 @@
           android:icon="@drawable/location_outline"/>
   </group>
 
-  <group android:checkableBehavior="single"
+  <group android:checkableBehavior="none"
          android:id="@+id/group3">
-    <item android:id="@+id/logout_outline"
+    
+    <item android:id="@+id/navLogout"
           android:title="Logout"
           android:icon="@drawable/logout_outline"/>
   </group>
