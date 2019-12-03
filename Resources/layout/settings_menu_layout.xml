@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,50 +8,56 @@
     android:paddingHorizontal="20sp"
     android:paddingTop="30sp"
     android:layout_height="match_parent">
-
-
-    <ImageButton
-        android:src="@drawable/bemer"
+    
+    <Button
+        android:layout_marginBottom="20dp"
+        android:textAllCaps="false"
+        android:paddingVertical="15dp"
+        android:textSize="30sp"
+        android:text="Emergency Contact"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:scaleType="centerInside"
-        android:background="#FFF"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundbutton_settings"
         android:id="@+id/bemer"/>
 
-    <ImageButton
-        android:src="@drawable/bwalk"
+    <Button
+        android:layout_marginBottom="20dp"
+        android:textAllCaps="false"
+        android:paddingVertical="15dp"
+        android:textSize="30sp"
+        android:text="Walking Calibration"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:scaleType="centerInside"
-        android:background="#FFF"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundbutton_settings"
         android:id="@+id/bwalk"/>
 
-    <ImageButton
-        android:src="@drawable/bper"
+    <Button
+        android:layout_marginBottom="20dp"
+        android:textAllCaps="false"
+        android:paddingVertical="15dp"
+        android:textSize="30sp"
+        android:text="Permissions"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:scaleType="centerInside"
-        android:background="#FFF"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundbutton_settings"
         android:id="@+id/bper" />
 
-    <ImageButton
-        android:src="@drawable/blang"
+    <Button
+        android:layout_marginBottom="20dp"
+        android:textAllCaps="false"
+        android:paddingVertical="15dp"
+        android:textSize="30sp"
+        android:text="Languages"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:scaleType="centerInside"
-        android:background="#FFF"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundbutton_settings"
         android:id="@+id/blang" />
 
     <LinearLayout
         android:orientation="vertical"
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
+        android:layout_height="wrap_content">
 
         <TextView
             android:text="Volume Override"
@@ -59,52 +65,46 @@
             android:textColor="#000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:id="@+id/textView2"
             android:layout_marginTop="15dp" />
 
         <SeekBar
-            android:layout_width="220sp"
+            android:layout_width="180sp"
             android:layout_height="wrap_content"
-            android:background="#FFF"
+            android:background="@color/white"
             android:layout_marginRight="0.0dp"
-            android:scaleX="1.5"
-            android:scaleY="1.5"
-            android:layout_gravity="left"
-            android:layout_marginLeft="45.0dp" />
+            android:scaleX="2"
+            android:scaleY="2"
+            
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="70.0dp" />
 
     </LinearLayout>
 
     <RelativeLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
+        android:layout_height="50dp">
+        
         <TextView
-            android:text="Haptics"
+            android:id="@+id/hapticsTextView"
+            android:textColor="@color/black"
             android:textSize="30sp"
-            android:textColor="#000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:id="@+id/haptics"/>
+            android:text="Haptics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-        <Switch
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/hapticsSwitch"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:scaleX="1.5"
-            android:scaleY="1.5"
-            android:id="@+id/hapticsswitch"/>
+            android:layout_height="wrap_content"/>
 
 
     </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"/>
-
-
 
 </LinearLayout>

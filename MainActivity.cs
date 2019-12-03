@@ -15,38 +15,43 @@ using Android.Text;
 using Android.Text.Style;
 using Xamarin.Essentials;
 using Android.Support.Design.Widget;
-using TheiaBProjectv2.Helpers;
+using TheiaBProjectv2.Data;
 using TheiaBProjectv2.Listeners;
 using TheiaBProjectv2.Activities;
+using Android.Support.V4.Content;
+using Android;
+using Newtonsoft.Json;
+using TheiaBProjectv2.DataModels;
+using System.Threading;
 
 namespace TheiaBProjectv2
 {
-    [Activity(Label = "Activity1", Theme = "@style/AppTheme.NoActionBar", LaunchMode = LaunchMode.SingleInstance)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", LaunchMode = LaunchMode.SingleInstance)]
     public class MainActivity : AppCompatActivity, TextureView.ISurfaceTextureListener
     {
         private AutoCompleteTextView searchACTextView;
         private GestureDetector gestureDetector;
         private CameraGestureListener cameraGestureListener;
         private NavigationView navview;
-        private IMenuItem menuItem;
-
+        
         //accelerometer
-        int fallCount = 0;
+        private int fallCount = 0;
 
         //camera variables
         private TextureView cameraSurfaceView;
-        Android.Hardware.Camera camera;
+        private Android.Hardware.Camera camera;
 
         //voice to text variables
         private readonly int VOICE = 10;
-        private bool isRecording = false;
         private ImageButton micButton;
 
         //Drawer
-        Android.Support.V4.Widget.DrawerLayout drawerLayout;
+        private Android.Support.V4.Widget.DrawerLayout drawerLayout;
 
         //audio player
         protected MediaPlayer tryAgainAudio, strartingNavAudio, fallDetected;
+
+        public static Account account;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -61,7 +66,7 @@ namespace TheiaBProjectv2
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.main_camera_layout);
 
-            initializeVariables();
+            initializeViews(JsonConvert.DeserializeObject<Account>(Intent.GetStringExtra("account")));
 
             //Autocomplete edittext
             var adapter = new ArrayAdapter<String>(this, Resource.Layout.list_item, Rooms.rooms);
@@ -84,7 +89,7 @@ namespace TheiaBProjectv2
             Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
         }
 
-        private void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
+        private async void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
         {
             var data = e.Reading;
             var acceleration = Math.Sqrt((data.Acceleration.X * data.Acceleration.X) + (data.Acceleration.Y * data.Acceleration.Y) + (data.Acceleration.Z * data.Acceleration.Z));
@@ -95,6 +100,10 @@ namespace TheiaBProjectv2
             else if (fallCount > 4 && acceleration > 0.9)
             {
                 fallDetected.Start();
+                fallCount = 0;
+                Thread.Sleep(2500);
+                await cameraGestureListener.sendLocation(account.emergencyContact, false);
+                cameraGestureListener.MakePhoneCall(account.emergencyContact, false);
             }
             else
                 fallCount = 0;
@@ -108,21 +117,20 @@ namespace TheiaBProjectv2
                     drawerLayout.CloseDrawers();
                     break;
 
-                case Resource.Id.navProfile:
-                    break;
-
                 case Resource.Id.navSettings:
+                    drawerLayout.CloseDrawers();
                     Intent intent = new Intent(this, typeof(SettMenuActivity));
                     StartActivity(intent);
                     break;
 
                 case Resource.Id.navCall:
-                    cameraGestureListener.MakePhoneCall("4693439123");
+                    cameraGestureListener.MakePhoneCall(account.emergencyContact, true);
                     break;
                 case Resource.Id.navLocation:
-                    cameraGestureListener.sendLocation();
+                    cameraGestureListener.sendLocation(account.emergencyContact, true);
                     break;
                 case Resource.Id.navLogout:
+                    Accelerometer.Stop();
                     StartActivity(typeof(LogInActivity));
                     this.OverridePendingTransition(Resource.Transition.fade_in, Resource.Transition.fade_out);
                     this.Finish();
@@ -136,8 +144,9 @@ namespace TheiaBProjectv2
             searchACTextView.OnEditorAction(Android.Views.InputMethods.ImeAction.Done);
         }
 
-        private void initializeVariables()
+        private void initializeViews(Account account)
         {
+            MainActivity.account = account;
             searchACTextView = FindViewById<AutoCompleteTextView>(Resource.Id.searchACTextView);
             cameraSurfaceView = FindViewById<TextureView>(Resource.Id.cameraSurfaceView);
             navview = FindViewById<NavigationView>(Resource.Id.navview);
@@ -159,6 +168,10 @@ namespace TheiaBProjectv2
             //Double tap detector
             cameraGestureListener = new CameraGestureListener(this, this);
             gestureDetector = new GestureDetector(this, cameraGestureListener);
+
+            View navHeader = navview.GetHeaderView(0);
+            TextView navNameTextView = (TextView)navHeader.FindViewById(Resource.Id.headerNameTextView);
+            navNameTextView.Text = account.firstname + " " + account.lastname;
         }
 
         private void MicButton_Click(object sender, EventArgs e)
@@ -184,20 +197,23 @@ namespace TheiaBProjectv2
         //Camera stuff
         public void OnSurfaceTextureAvailable(Android.Graphics.SurfaceTexture surface, int w, int h)
         {
-            camera = Android.Hardware.Camera.Open();
 
-            cameraSurfaceView.LayoutParameters = new RelativeLayout.LayoutParams(w, h);
 
-            try
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.Camera) == (int)Permission.Granted)
             {
-                camera.SetPreviewTexture(surface);
-                camera.SetDisplayOrientation(90);
-                camera.StartPreview();
+                camera = Android.Hardware.Camera.Open();
+                cameraSurfaceView.LayoutParameters = new RelativeLayout.LayoutParams(w, h);
+                try
+                {
+                    camera.SetPreviewTexture(surface);
+                    camera.SetDisplayOrientation(90);
+                    camera.StartPreview();
 
-            }
-            catch (Java.IO.IOException ex)
-            {
-                Console.WriteLine(ex.Message);
+                }
+                catch (Java.IO.IOException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
 
@@ -278,7 +294,7 @@ namespace TheiaBProjectv2
         //Color menu items
         private void colorMenu()
         {
-            menuItem = navview.Menu.FindItem(Resource.Id.navCall);
+            IMenuItem menuItem = navview.Menu.FindItem(Resource.Id.navCall);
             SpannableString s = new SpannableString(menuItem.TitleFormatted);
             s.SetSpan(new ForegroundColorSpan(Color.DarkOrange), 0, s.Length(), 0);
             menuItem.SetTitle(s);
@@ -314,5 +330,6 @@ namespace TheiaBProjectv2
                 snackbar.Show();
             }
         }
+
     }
 }

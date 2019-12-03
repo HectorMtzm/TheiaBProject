@@ -9,7 +9,10 @@
     <color name="black">#000</color>
     <color name="gray">#d2d2d2</color>
     <color name="orange">#f28a1b</color>
-    <color name="red">#c92e28</color>
-  <color name="darkRed">#c23c3c</color>
+    <color name="darkOrange">#cc7314</color>
+    <color name="red">#de4747</color>
+  <color name="darkRed">#b33737</color>
+  <color name="graySettings">#c4c4c4</color>
+  <color name="darkGraySettings">#a3a3a3</color>
   
 </resources>

@@ -11,6 +11,7 @@
         android:layout_height="190dp"/>
 
     <TextView
+        android:id="@+id/headerNameTextView"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"

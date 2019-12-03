@@ -22,20 +22,19 @@
         android:minHeight="25px">
 
         <EditText
-            android:inputType="textCapWords"
+            android:inputType="textEmailAddress"
             android:hint="Username or E-mail"
             android:textSize="30sp"
             android:imeOptions="actionNext"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/firstNameEditText" />
+            android:id="@+id/emailEditText" />
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:id="@+id/username">
+        android:layout_height="70dp">
 
         <EditText
             android:textSize="30sp"
@@ -44,7 +43,7 @@
             android:imeOptions="actionDone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/password" />
+            android:id="@+id/passwordEditText" />
 
     </android.support.design.widget.TextInputLayout>
 

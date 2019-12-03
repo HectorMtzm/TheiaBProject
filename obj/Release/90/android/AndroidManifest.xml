@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.theiabprojectv2" android:installLocation="auto">
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.ACCEPT_HANDOVER" />
+  <uses-permission android:name="android.permission.CALL_PHONE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.READ_CONTACTS" />
+  <uses-permission android:name="android.permission.DELETE_CACHE_FILES" />
+  <uses-permission android:name="android.permission.SEND_RESPOND_VIA_MESSAGE" />
+  <uses-permission android:name="android.permission.SEND_SMS" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <application android:allowBackup="true" android:icon="@mipmap/launcher_icon" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme" android:usesCleartextTraffic="true" android:name="android.app.Application">
+    <activity android:label="@string/app_name" android:launchMode="singleInstance" android:theme="@style/Sign_in_screen" android:name="md504e1da7710bfc284e8cbe1feec5be2fa.LogInActivity" />
+    <activity android:label="Sign in" android:noHistory="true" android:theme="@style/AppTheme.NoActionBar" android:name="md504e1da7710bfc284e8cbe1feec5be2fa.SignIn" />
+    <activity android:label="Sign Up" android:theme="@style/AppTheme.NoActionBar" android:name="md504e1da7710bfc284e8cbe1feec5be2fa.SignUp" />
+    <activity android:noHistory="true" android:theme="@style/splash_screen" android:name="md504e1da7710bfc284e8cbe1feec5be2fa.SplashActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="@string/app_name" android:launchMode="singleInstance" android:theme="@style/AppTheme.NoActionBar" android:name="md504e1da7710bfc284e8cbe1feec5be2fa.MainActivity" />
+    <activity android:label="Settings" android:name="md5fda3400dcda2600b053c799fd8f68796.PermissionsActivity" />
+    <activity android:label="Settings" android:name="md5fda3400dcda2600b053c799fd8f68796.SettMenuActivity" />
+    <activity android:label="Emergency Contact Selection" android:name="md5e4034439844560ebb602b4af3b7e34c3.EmergencyContactSActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="1999999999" android:authorities="com.companyname.theiabprojectv2.mono.MonoRuntimeProvider.__mono_init__" />
+  </application>
+</manifest>

@@ -38,9 +38,13 @@
       "frameworks": {
         "monoandroid90": {
           "dependencies": {
-            "FastAndroidCamera": {
+            "Microsoft.Net.Http": {
               "target": "Package",
-              "version": "[2.0.0, )"
+              "version": "[2.2.29, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             },
             "Refractored.Controls.CircleImageView": {
               "target": "Package",

@@ -8,11 +8,12 @@ using Android.Content.PM;
 using Android.Support.V4.Content;
 using Android;
 using Android.Support.V4.App;
+using Android.Support.V7.App;
 
 namespace TheiaBProjectv2
 {
     [Activity(Label = "@string/app_name", Theme = "@style/Sign_in_screen", LaunchMode = LaunchMode.SingleInstance)]
-    public class LogInActivity : Activity
+    public class LogInActivity : AppCompatActivity
     {
         private GestureDetector _gestureDetector;
 

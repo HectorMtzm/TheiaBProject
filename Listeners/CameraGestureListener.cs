@@ -47,7 +47,7 @@ namespace TheiaBProjectv2.Listeners
             if (Math.Abs(velocityY) >= 2.0 * Math.Abs(velocityX))
             {
                 if (distanceY > 300.0)
-                    sendLocation();
+                    sendLocation(MainActivity.account.emergencyContact, true);
                 usedThisFling = true;
             }
             return usedThisFling;
@@ -55,26 +55,28 @@ namespace TheiaBProjectv2.Listeners
 
         public override void OnLongPress(MotionEvent e)
         {
-            MakePhoneCall("4693439123");
+            MakePhoneCall(MainActivity.account.emergencyContact, true);
         }
 
 
 
-        public async System.Threading.Tasks.Task sendLocation()
+        public async System.Threading.Tasks.Task sendLocation(string number, bool playAudio)
         {
             var request = new GeolocationRequest(GeolocationAccuracy.Best);
             var location = await Geolocation.GetLocationAsync(request);
             string message = "I got lost around here: http://www.google.com/maps/place/" + location.Latitude + "," + location.Longitude;
-            SmsManager.Default.SendTextMessage("4693439123", null, message, null, null);
-            locationSent.Start();
-
-            //Play audio for "Location sent"}
+            SmsManager.Default.SendTextMessage(number, null, message, null, null);
+            if(playAudio)
+                locationSent.Start();
         }
 
-        public void MakePhoneCall(string number)
+        public void MakePhoneCall(string number, bool playAudio)
         {
-            emergencyCall.Start();
-            Thread.Sleep(1500);
+            if (playAudio)
+            {
+                emergencyCall.Start();
+                Thread.Sleep(1500);
+            }
             var intent = new Intent(Intent.ActionCall, Android.Net.Uri.Parse("tel:" + Uri.EscapeDataString(number)));
             intent.AddFlags(ActivityFlags.NewTask);
             Android.App.Application.Context.StartActivity(intent);

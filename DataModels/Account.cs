@@ -10,16 +10,28 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace TheiaBProjectv2
+namespace TheiaBProjectv2.DataModels
 {
     
-    class Account
+    public class Account
     {
-        string firstname { get; set; }
-        string lastname { get; set; }
-        string email { get; set; }
-        string phoneNumber { get; set; }
-        string username { get; set; }
-        string password { get; set; }
+        public string firstname { get; set; }
+        public string lastname { get; set; }
+        public string email { get; set; }
+        public string phoneNumber { get; set; }
+        public string username { get; set; }
+        public string emergencyContact { get; set; }
+
+        public Account(string firstname, string lastname, string email, string phoneNumber, string username, string emergencyContact)
+        {
+            this.firstname = firstname;
+            this.lastname = lastname;
+            this.email = email;
+            this.phoneNumber = phoneNumber;
+            this.username = username;
+            this.emergencyContact = emergencyContact;
+
+        }
+
     }
 }
